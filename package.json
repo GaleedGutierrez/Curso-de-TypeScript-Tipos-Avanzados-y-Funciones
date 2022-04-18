@@ -1,0 +1,29 @@
+{
+  "name": "curso-de-typescript-tipos-avanzados-y-funciones",
+  "version": "1.0.0",
+  "description": "Curso de Platzi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaleedGutierrez/Curso-de-TypeScript-Tipos-Avanzados-y-Funciones.git"
+  },
+  "keywords": [
+    "typescript",
+    "functiones",
+    "tipos",
+    "avanzados"
+  ],
+  "author": "Galeed Gutierrez <galeedeveloper@gmail.com> (http://galeedgutierrez.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GaleedGutierrez/Curso-de-TypeScript-Tipos-Avanzados-y-Funciones/issues"
+  },
+  "homepage": "https://github.com/GaleedGutierrez/Curso-de-TypeScript-Tipos-Avanzados-y-Funciones#readme",
+  "devDependencies": {
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
