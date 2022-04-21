@@ -1,4 +1,4 @@
-import { addProduct, products, updateProduct, readProduct, deleteProduct } from './products/product.service';
+import { addProduct, products, updateProduct, deleteProduct, findProduct } from './products/product.service';
 import { faker } from '@faker-js/faker';
 import { Product } from './products/product.model';
 
@@ -22,6 +22,13 @@ updateProduct(product.id, {
     title: 'New title',
     stock: 80,
 }, products);
+
+findProduct({
+    stock: 10,
+    color: 'red',
+    createdAt: new Date(),
+    isNew: true,
+});
 // addProduct({
 //     id: 123,
 //     description: faker.commerce.productDescription(),
