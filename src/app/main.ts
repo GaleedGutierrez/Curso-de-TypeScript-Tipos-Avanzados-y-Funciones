@@ -16,6 +16,12 @@ for (let index = 0; index < 2; index++) {
         categoryId: faker.datatype.uuid()
     });
 }
+
+const product = products[0];
+updateProduct(product.id, {
+    title: 'New title',
+    stock: 80,
+}, products);
 // addProduct({
 //     id: 123,
 //     description: faker.commerce.productDescription(),
