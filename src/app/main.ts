@@ -1,15 +1,96 @@
-import { addProduct } from './products/product.service'
+import { addProduct, products, updateProduct, readProduct, deleteProduct } from './products/product.service';
+import { faker } from '@faker-js/faker';
+import { Product } from './products/product.model';
 
+for (let index = 0; index < 2; index++) {
+    addProduct({
+        id: faker.datatype.uuid(),
+        description: faker.commerce.productDescription(),
+        image: faker.image.imageUrl(),
+        color: faker.commerce.color(),
+        size: faker.random.arrayElement(['S', 'M', 'L', 'XL']),
+        price: parseInt(faker.commerce.price()),
+        isNew: faker.datatype.boolean(),
+        tags: faker.random.arrayElements(),
+        title: faker.commerce.productName(),
+        createdAt: faker.date.recent(),
+        updatedAt: faker.date.recent(),
+        stock: faker.datatype.number({min: 10, max: 100}),
+        category: {
+            id: faker.datatype.uuid(),
+            name: faker.commerce.department(),
+            createdAt: faker.date.recent(),
+            updatedAt: faker.date.recent()
+        }
+    });
+}
 addProduct({
-    id: '1',
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    title: 'p1',
-    stock: 90,
+    id: 123,
+    description: faker.commerce.productDescription(),
+    image: faker.image.imageUrl(),
+    color: faker.commerce.color(),
+    size: faker.random.arrayElement(['S', 'M', 'L', 'XL']),
+    price: parseInt(faker.commerce.price()),
+    isNew: faker.datatype.boolean(),
+    tags: faker.random.arrayElements(),
+    title: faker.commerce.productName(),
+    createdAt: faker.date.recent(),
+    updatedAt: faker.date.recent(),
+    stock: faker.datatype.number({min: 10, max: 100}),
     category: {
-        id: '12',
-        name: 'c1',
-        createdAt: new Date(),
-        updatedAt: new Date()
+        id: faker.datatype.uuid(),
+        name: faker.commerce.department(),
+        createdAt: faker.date.recent(),
+        updatedAt: faker.date.recent()
     }
 });
+
+addProduct({
+    id: 465,
+    description: faker.commerce.productDescription(),
+    image: faker.image.imageUrl(),
+    color: faker.commerce.color(),
+    size: faker.random.arrayElement(['S', 'M', 'L', 'XL']),
+    price: parseInt(faker.commerce.price()),
+    isNew: faker.datatype.boolean(),
+    tags: faker.random.arrayElements(),
+    title: faker.commerce.productName(),
+    createdAt: faker.date.recent(),
+    updatedAt: faker.date.recent(),
+    stock: faker.datatype.number({min: 10, max: 100}),
+    category: {
+        id: faker.datatype.uuid(),
+        name: faker.commerce.department(),
+        createdAt: faker.date.recent(),
+        updatedAt: faker.date.recent()
+    }
+});
+
+const changes: Product = {
+    id: 'changes',
+    description: faker.commerce.productDescription(),
+    image: faker.image.imageUrl(),
+    color: faker.commerce.color(),
+    size: faker.random.arrayElement(['S', 'M', 'L', 'XL']),
+    price: parseInt(faker.commerce.price()),
+    isNew: faker.datatype.boolean(),
+    tags: faker.random.arrayElements(),
+    title: faker.commerce.productName(),
+    createdAt: faker.date.recent(),
+    updatedAt: faker.date.recent(),
+    stock: faker.datatype.number({min: 10, max: 100}),
+    category: {
+        id: faker.datatype.uuid(),
+        name: faker.commerce.department(),
+        createdAt: faker.date.recent(),
+        updatedAt: faker.date.recent()
+    }
+}
+
+updateProduct(123, changes, products);
+readProduct('changes', products);
+deleteProduct('changes', products);
+readProduct('changes', products);
+updateProduct(123, changes, products);
+deleteProduct('changes', products);
+// console.log({products});
