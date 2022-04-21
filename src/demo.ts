@@ -1,4 +1,4 @@
-type UserId = {
+export type UserId = {
     name: string,
     id: number
 };
