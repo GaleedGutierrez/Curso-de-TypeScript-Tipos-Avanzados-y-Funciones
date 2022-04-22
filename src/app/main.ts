@@ -28,6 +28,7 @@ findProduct({
     color: 'red',
     createdAt: new Date(),
     isNew: true,
+    tags: ['as', 'xd']
 });
 // addProduct({
 //     id: 123,
