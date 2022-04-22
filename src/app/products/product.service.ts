@@ -24,7 +24,7 @@ export const addProduct = (data: CreateProductDto): Product => {
 
 export const findProduct = (dto: FindProductDto): Product[] => {
     // code
-    dto.isNew = false;
+    // dto.isNew = false; // Error
     return products;
 }
 
@@ -38,7 +38,7 @@ export const deleteProduct = (idSearch: string | number, products: Product[]): v
 
 }
 
-export const updateProduct = (idSearch: string | number, changes: UpdateProductDto, products: Product[]): Product => {
+export const updateProduct = (idSearch: Product['id'], changes: UpdateProductDto, products: Product[]): Product => {
     const productFindIndex = products.findIndex(({id}) => id === idSearch);
     const prevData = products[productFindIndex];
     if (productFindIndex !== -1) {
