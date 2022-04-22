@@ -25,6 +25,9 @@ export const addProduct = (data: CreateProductDto): Product => {
 export const findProduct = (dto: FindProductDto): Product[] => {
     // code
     // dto.isNew = false; // Error
+    // dto.tags = []; // Error
+    // dto.tags?.pop(); // Error
+    // dto.tags?.push('1'); // Error
     return products;
 }
 
